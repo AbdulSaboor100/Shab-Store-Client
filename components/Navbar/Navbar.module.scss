@@ -1,0 +1,36 @@
+.navbar_container {
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem 0;
+  .search_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    label {
+      font-weight: 600 !important;
+    }
+  }
+  .logo_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h3 {
+      cursor: pointer;
+    }
+  }
+  .user_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    .user {
+      cursor: pointer;
+    }
+    .user_shop {
+      cursor: pointer;
+    }
+  }
+}

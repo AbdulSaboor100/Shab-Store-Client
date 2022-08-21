@@ -84,6 +84,22 @@ p {
   color: #14142b !important;
 }
 
+input {
+  font-family: "Inter" !important;
+}
+
+span {
+  font-family: "Inter" !important;
+}
+
+small {
+  font-family: "Inter" !important;
+}
+
+label {
+  font-family: "Inter" !important;
+}
+
 .primaryColor {
   background: #1ad993;
 }
@@ -109,5 +125,16 @@ p {
 }
 
 .darkWhiteColor {
+  background: #f4f2ff;
+}
+
+.flex_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.MuiOutlinedInput-root {
+  border-radius: 30px !important;
   background: #f4f2ff;
 }
