@@ -28,7 +28,7 @@ const Footer = () => {
   };
   return (
     <div className={styles.footer_new_container}>
-      <div className={styles.footer_container}>
+      <div className={`${styles.footer_container} darkGreyColor`}>
         <div className={styles.footer}>
           <GridContainer>
             <GridItem size={2}>
