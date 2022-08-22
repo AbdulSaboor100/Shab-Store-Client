@@ -1,138 +1,127 @@
-import React from "react";
-import { Typography } from "@mui/material";
-import styles from "./Footer.module.scss";
-import Link from "next/link";
+import { Grid, Typography } from "@mui/material";
 import Image from "next/image";
-import { PrimaryButton } from "../Button/Button";
-import { Instagram, Facebook } from "@mui/icons-material";
+import React from "react";
+import styles from "./Footer.module.scss";
 
 const Footer = () => {
-  const GridContainer = ({ children, rowReverse }) => {
-    if (rowReverse) {
-      return (
-        <div
-          className={`${styles.grid_container}`}
-          style={{ flexDirection: "row-reverse" }}
-        >
-          {children}
-        </div>
-      );
-    } else {
-      return <div className={`${styles.grid_container}`}>{children}</div>;
-    }
-  };
-  const GridItem = ({ children, size }) => {
-    if (size == 2) {
-      return <section className={styles.grid_2}>{children}</section>;
-    }
-  };
   return (
-    <div className={styles.footer_new_container}>
-      <div className={`${styles.footer_container} darkGreyColor`}>
-        <div className={styles.footer}>
-          <GridContainer>
-            <GridItem size={2}>
-              <div className={styles.footer_logo_img_container}>
-                {/* <Image
-                  src="/images/logo.png"
-                  width={184}
-                  height={192}
-                  objectFit="contain"
-                  alt="footer logo"
-                  placeholder="blur"
-                  blurDataURL="/images/logo.png"
-                /> */}
-                <Typography variant="h3">Shab Store</Typography>
-              </div>
-            </GridItem>
-            <GridItem size={2}>
-              <div className={styles.locations_container}>
-                <Typography variant="h5">Locations</Typography>
-                <Link href="/roseville-seo">
-                  <Typography variant="body1">Roseville SEO</Typography>
-                </Link>
-                <Link href="/folsom-seo-company">
-                  <Typography variant="body1">Folsom SEO</Typography>
-                </Link>
-                <Link href="/roseville-web-design">
-                  <Typography variant="body1">Roseville Web Design</Typography>
-                </Link>
-                <Link href="/">
-                  <Typography variant="body1">Rocklin Web Design</Typography>
-                </Link>
-                <Link href="/">
-                  <Typography variant="body1">Davis SEO</Typography>
-                </Link>
-                <Link href="/">
-                  <Typography variant="body1">Davis Web Design</Typography>
-                </Link>
-                <Link href="/">
-                  <Typography variant="body1">Elk Grove Web Design</Typography>
-                </Link>
-              </div>
-            </GridItem>
-            <GridItem size={2}>
-              <div className={styles.services_container}>
-                <Typography variant="h5">Services</Typography>
-                <Link href="/">
-                  <Typography variant="body1">Custom Websites</Typography>
-                </Link>
-
-                <Link href="/">
-                  <Typography variant="body1">SEO</Typography>
-                </Link>
-                <Link href="/">
-                  <Typography variant="body1">Google Ads</Typography>
-                </Link>
-                <Link href="/">
-                  <Typography variant="body1">Facebook Ads</Typography>
-                </Link>
-              </div>
-            </GridItem>
-            <GridItem size={2}>
-              <div className={styles.helpline_container}>
-                <Typography variant="body1">Give us a call</Typography>
-
-                <Typography component="span">
-                  {" "}
-                  <a style={{ color: "white" }} href="tel:+15302886918">
-                    +1 (530) 288-6918{" "}
-                  </a>
-                </Typography>
-
-                <Typography variant="body1">Email us. Anytime.</Typography>
-                <Typography component="span">
-                  <a style={{ color: "white" }} href="mailto:info@arcel.com">
-                    info@arcel.com
-                  </a>
-                </Typography>
-              </div>
-            </GridItem>
-            <GridItem size={2}>
-              <div className={styles.follow_us_container}>
-                <Typography variant="span">Social Links</Typography>
-                <div className={styles.social_icons}>
-                  <a
-                    href="https://www.facebook.com/ArchitectedRelations/"
-                    target="_blank"
-                  >
-                    <Instagram />
-                  </a>
-                  <a
-                    href="https://www.google.com/search?q=architected+relations&rlz=1C5CHFA_enUS884US884&oq=architected+relations&aqs=chrome..69i57j69i59j69i61l3.4677j0j1&sourceid=chrome&ie=UTF-8#lrd=0x809b238c2a250c59:0x8ab5a6a96e13ae89,1,,,"
-                    target="_blank"
-                  >
-                    <Facebook />
-                  </a>
-                </div>
-              </div>
-            </GridItem>
-          </GridContainer>
-          <hr />
-          <p className={styles.copyright}>
-            {new Date().getFullYear()} © Shab Store
-          </p>
+    <div className={styles.footer_container}>
+      <div className={`${styles.our_sponsers_container} darkBlueColor`}>
+        <Typography variant="h2">Our Sponsers</Typography>
+        <div className={styles.sponsers}>
+          <div>
+            <Image
+              src="/images/sponser_1.png"
+              width={172}
+              height={34}
+              objectFit="contain"
+              alt="sponsers logo"
+            />
+          </div>
+          <div>
+            <Image
+              src="/images/sponser_2.png"
+              width={155}
+              height={34}
+              objectFit="contain"
+              alt="sponsers logo"
+            />
+          </div>
+          <div>
+            <Image
+              src="/images/sponser_3.png"
+              width={150}
+              height={34}
+              objectFit="contain"
+              alt="sponsers logo"
+            />
+          </div>
+          <div>
+            <Image
+              src="/images/sponser_4.png"
+              width={155}
+              height={34}
+              objectFit="contain"
+              alt="sponsers logo"
+            />
+          </div>
+          <div>
+            <Image
+              src="/images/sponser_5.png"
+              width={155}
+              height={34}
+              objectFit="contain"
+              alt="sponsers logo"
+            />
+          </div>
         </div>
+      </div>
+      <div className={`${styles.footer} darkBlackColor`}>
+        <Grid container spacing={5}>
+          <Grid item xs={12} md={4} lg={3}>
+            <div className={styles.footer_logo_container}>
+              <Image
+                src="/images/logo_white.png"
+                width={196}
+                height={48}
+                objectFit="contain"
+                alt="logo"
+              />
+            </div>
+          </Grid>
+          <Grid item xs={12} md={4} lg={3}>
+            <div className={styles.pages_container}>
+              <Typography variant="h4">Pages</Typography>
+              <Typography variant="body1">Home</Typography>
+              <Typography variant="body1">Podcast</Typography>
+              <Typography variant="body1">Host</Typography>
+              <Typography variant="body1">Blog</Typography>
+            </div>
+          </Grid>
+          <Grid item xs={12} md={4} lg={3}>
+            <div className={styles.reachus_container}>
+              <Typography variant="h4">Reach Us</Typography>
+              <Typography variant="body1">Contact</Typography>
+              <Typography variant="body1">About</Typography>
+            </div>
+          </Grid>
+          <Grid item xs={12} md={4} lg={3}>
+            <div className={styles.subscribe_container}>
+              <Typography variant="h4">Subscribe</Typography>
+              <Image
+                src="/images/apple_podcast_white.png"
+                width={182}
+                height={32}
+                objectFit="contain"
+                alt="apple podcast logo"
+              />{" "}
+              <Image
+                src="/images/google_podcast_white.png"
+                width={182}
+                height={32}
+                objectFit="contain"
+                alt="apple podcast logo"
+              />{" "}
+              <Image
+                src="/images/sound_podcast_white.png"
+                width={182}
+                height={32}
+                objectFit="contain"
+                alt="apple podcast logo"
+              />{" "}
+              <Image
+                src="/images/spotify_white.png"
+                width={127}
+                height={32}
+                objectFit="contain"
+                alt="apple podcast logo"
+              />
+            </div>
+          </Grid>
+        </Grid>
+      </div>
+      <div className={`${styles.footer_line_container} darkBlueColor`}>
+        <Typography variant="body1">© Copyright Shab Store 2021</Typography>
       </div>
     </div>
   );

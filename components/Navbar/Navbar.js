@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Navbar.module.scss";
 import TextField from "@mui/material/TextField";
-import { Grid, Typography } from "@mui/material";
+import { Grid, Link, Typography } from "@mui/material";
 import { PermIdentity, ShoppingCart } from "@mui/icons-material";
 
 const Navbar = () => {
