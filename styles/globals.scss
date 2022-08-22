@@ -146,3 +146,27 @@ a {
 .MuiLink-underlineHover {
   color: #14142b !important;
 }
+
+.product_page_container {
+  .Mui-checked {
+    color: #832bc1 !important;
+  }
+}
+
+.navbar_container {
+  .MuiFilledInput-input {
+    border-radius: 10px !important;
+    background: #f4f2ff;
+  }
+  .MuiInputLabel-root {
+    color: #14142b !important;
+  }
+  .MuiFilledInput-root {
+    &::after {
+      border:none !important;
+    }
+  }
+  .BaseBadge-badge{
+    background: #832bc1 !important;
+  }
+}

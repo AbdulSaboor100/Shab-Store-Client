@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
     <Fragment>
       <Container maxWidth="xl" disableGutters={true}>
         <div className={styles.navbar_fixed_container}>
-          <div className={`${styles.fixed_container} darkWhiteColor`}>
+          <div className={`${styles.fixed_container} darkBlueColor`}>
             <Navbar />
             <Divider />
             <Menu />

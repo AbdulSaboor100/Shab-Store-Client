@@ -18,6 +18,7 @@
     align-items: center;
     h3 {
       cursor: pointer;
+      color: white !important;
     }
   }
   .user_container {
@@ -26,6 +27,9 @@
     justify-content: center;
     align-items: center;
     gap: 2rem;
+    svg{
+      fill: white !important;
+    }
     .user {
       cursor: pointer;
     }

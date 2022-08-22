@@ -4,7 +4,7 @@ import styles from "./Menu.module.scss";
 
 const Menu = () => {
   return (
-    <div className={`${styles.menu_container} darkWhiteColor`}>
+    <div className={`${styles.menu_container} darkBlackColor`}>
       <Grid container>
         <Grid item xs={12} md={3}>
           <div className={styles.link_container}>

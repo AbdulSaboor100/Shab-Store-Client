@@ -9,3 +9,9 @@
     top: 0;
   }
 }
+
+@media only screen and (max-width: 1025px) {
+  .navbar_fixed_container {
+    display: none;
+  }
+}

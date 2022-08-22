@@ -3,17 +3,18 @@ import styles from "./Navbar.module.scss";
 import TextField from "@mui/material/TextField";
 import { Grid, Link, Typography } from "@mui/material";
 import { PermIdentity, ShoppingCart } from "@mui/icons-material";
+import Badge from "@mui/material/Badge";
 
 const Navbar = () => {
   return (
-    <div className={styles.navbar_container}>
+    <div className={`${styles.navbar_container} navbar_container`}>
       <Grid container spacing={5} sx={{ alignItems: "center" }}>
         <Grid item xs={12} md={4} lg={4}>
           <div className={styles.search_container}>
             <TextField
               id="outlined-basic"
               label="Search"
-              variant="outlined"
+              variant="filled"
               size="small"
             />
           </div>
@@ -29,7 +30,9 @@ const Navbar = () => {
               <PermIdentity />
             </div>
             <div className={styles.user_shop}>
-              <ShoppingCart />
+              <Badge badgeContent={4} color="success">
+                <ShoppingCart color="action" />
+              </Badge>
             </div>
           </div>
         </Grid>
