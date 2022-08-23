@@ -4,8 +4,27 @@ import styles from "./ShopCards.module.scss";
 import { AddShoppingCart } from "@mui/icons-material";
 import { PrimaryButton } from "../Button/Button";
 import Image from "next/image";
+import { useDispatch, useSelector } from "react-redux";
+import { setAlert } from "../../redux/actions/alert";
 
 const ShopCards = ({ title, description, price, image }) => {
+  let dispatch = useDispatch();
+  let token = useSelector((state) => state.auth?.token);
+
+  const addToCard = () => {
+    if (!token) {
+      dispatch(
+        setAlert({
+          type: "error",
+          message: "Login first to add items",
+          time: 2000,
+        })
+      );
+    }else{
+      
+    }
+  };
+
   return (
     <div className={styles.shop_card_container}>
       <div className={`${styles.img_container}  darkBlackColor`}>
@@ -31,7 +50,7 @@ const ShopCards = ({ title, description, price, image }) => {
           </Typography>
         </div>
         <div className={styles.btn_container}>
-          <PrimaryButton>
+          <PrimaryButton onClick={addToCard}>
             <AddShoppingCart /> Add To cart
           </PrimaryButton>
         </div>
