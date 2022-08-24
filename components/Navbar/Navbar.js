@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Navbar.module.scss";
 import TextField from "@mui/material/TextField";
-import { Grid, Link, Typography } from "@mui/material";
+import { Avatar, Grid, IconButton, Link, Typography } from "@mui/material";
 import { PermIdentity, ShoppingCart } from "@mui/icons-material";
 import Badge from "@mui/material/Badge";
 
@@ -26,9 +26,23 @@ const Navbar = () => {
         </Grid>
         <Grid item xs={12} md={4} lg={4}>
           <div className={styles.user_container}>
-            <div className={styles.user}>
-              <PermIdentity />
-            </div>
+            {false ? (
+              <div className={styles.user}>
+                <Avatar alt="" src="" />
+              </div>
+            ) : (
+              <div className={styles.user}>
+                <IconButton>
+                  <Typography variant="body1">Login</Typography>
+                </IconButton>
+                <IconButton>
+                  <Typography variant="body1">/</Typography>
+                </IconButton>
+                <IconButton>
+                  <Typography variant="body1">Register</Typography>
+                </IconButton>
+              </div>
+            )}
             <div className={styles.user_shop}>
               <Badge badgeContent={4} color="success">
                 <ShoppingCart color="action" />
