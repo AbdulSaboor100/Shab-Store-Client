@@ -16,7 +16,7 @@ const Register = () => {
   let dispatch = useDispatch();
   let router = useRouter();
   let [loading, setLoading] = useState(false);
-
+// change
   let [formData, setFormData] = useState({
     email: "",
     name: "",
