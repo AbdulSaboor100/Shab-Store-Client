@@ -6,23 +6,14 @@ import { PrimaryButton } from "../Button/Button";
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import { setAlert } from "../../redux/actions/alert";
+import { addProductToCart } from "../../redux/actions/cart";
 
-const ShopCards = ({ title, description, price, image }) => {
+const ShopCards = ({ data, title, description, price, image }) => {
+  let allCartProducts = useSelector((state) => state?.cart?.products);
   let dispatch = useDispatch();
-  let token = useSelector((state) => state.auth?.token);
 
-  const addToCard = () => {
-    if (!token) {
-      dispatch(
-        setAlert({
-          type: "error",
-          message: "Login first to add items",
-          time: 2000,
-        })
-      );
-    }else{
-      
-    }
+  const addToCard = (product) => {
+    dispatch(addProductToCart(product, allCartProducts));
   };
 
   return (
@@ -50,7 +41,7 @@ const ShopCards = ({ title, description, price, image }) => {
           </Typography>
         </div>
         <div className={styles.btn_container}>
-          <PrimaryButton onClick={addToCard}>
+          <PrimaryButton onClick={() => addToCard(data)}>
             <AddShoppingCart /> Add To cart
           </PrimaryButton>
         </div>

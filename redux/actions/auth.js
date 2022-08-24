@@ -111,3 +111,60 @@ export const getCurrentUser = () => async (dispatch) => {
     }
   }
 };
+
+export const userLogout = (router) => (dispatch) => {
+  router.push("/login");
+  dispatch({ type: Types.LOGOUT_USER });
+  dispatch(
+    setAlert({ type: "success", message: "Logout Successfully", time: 1000 })
+  );
+};
+
+export const userSignInCustom =
+  (formData, setLoading, router) => async (dispatch) => {
+    setLoading(true);
+    try {
+      let response = await axios.post(`${BASE_URL}/api/auth/login`, formData);
+      dispatch({ type: Types.AUTH_LOGIN, payload: response?.data });
+      dispatch(
+        setAlert({
+          type: "success",
+          message: response?.data?.status,
+          time: 1000,
+        })
+      );
+      localStorage.setItem("token", response?.data?.token);
+      setAuthToken(response?.data?.token);
+      dispatch(getCurrentUser());
+      setLoading(false);
+      router.push("/");
+    } catch (error) {
+      setLoading(false);
+      if (error?.response?.data) {
+        dispatch({
+          type: Types.AUTH_LOGIN_FAILED,
+          payload: error?.response?.data?.status,
+        });
+        dispatch(
+          setAlert({
+            type: "error",
+            message: error?.response?.data?.status,
+            time: 1000,
+          })
+        );
+      } else {
+        dispatch({
+          type: Types.AUTH_LOGIN_FAILED,
+          payload: error?.message,
+        });
+        dispatch(
+          setAlert({
+            type: "error",
+            message: error?.message,
+            time: 1000,
+          })
+        );
+      }
+      console.log(error);
+    }
+  };

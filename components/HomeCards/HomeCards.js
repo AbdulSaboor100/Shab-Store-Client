@@ -15,6 +15,7 @@ const HomeCards = ({ title, description, data }) => {
           <Fragment key={i}>
             <Grid item xs={12} md={6} lg={4}>
               <ShopCards
+                data={item}
                 title={item?.title}
                 description={item?.description}
                 price={item?.price}

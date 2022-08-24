@@ -104,6 +104,10 @@ a {
   font-family: "Inter" !important;
 }
 
+li{
+  font-family: "Inter" !important;
+}
+
 .primaryColor {
   background: #1ad993;
 }
@@ -168,5 +172,11 @@ a {
   }
   .BaseBadge-badge{
     background: #832bc1 !important;
+  }
+}
+
+.menu_container{
+  .MuiPaper-root{
+    background: #f4f2ff !important;
   }
 }

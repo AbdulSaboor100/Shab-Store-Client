@@ -1,6 +1,7 @@
 import { Container, Divider } from "@mui/material";
 import React, { Fragment } from "react";
 import Alerts from "../../components/Alerts/Alerts";
+import Cart from "../../components/Cart/Cart";
 import Footer from "../../components/Footer/Footer";
 import Menu from "../../components/Menu/Menu";
 import Navbar from "../../components/Navbar/Navbar";
@@ -19,6 +20,7 @@ const Layout = ({ children }) => {
             <Divider />
           </div>
         </div>
+        <Cart />
         {children}
         <Footer />
       </Container>

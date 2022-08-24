@@ -13,6 +13,8 @@ const Home = () => {
         "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
       price: "1000",
       image: "/images/polo_1.jpg",
+      _id: "3412401u5184u",
+      totalitems: 1,
     },
     {
       title: "Polo Shirt 2",
@@ -20,6 +22,8 @@ const Home = () => {
         "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
       price: "2000",
       image: "/images/polo_1.jpg",
+      _id: "3412401u5184p",
+      totalitems: 1,
     },
     {
       title: "Polo Shirt 3",
@@ -27,6 +31,8 @@ const Home = () => {
         "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
       price: "800",
       image: "/images/polo_1.jpg",
+      _id: "3412401u5184l",
+      totalitems: 1,
     },
   ];
   return (
