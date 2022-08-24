@@ -2,6 +2,7 @@ import { Types } from "../Types";
 import axios from "axios";
 import { BASE_URL } from "../../config/config";
 import { setAlert } from "./alert";
+import setAuthToken from "../../utils/setAuthToken";
 
 export const userSignUpCustom =
   (formData, setLoading, router) => async (dispatch) => {
@@ -20,6 +21,8 @@ export const userSignUpCustom =
         })
       );
       localStorage.setItem("token", response?.data?.token);
+      setAuthToken(response?.data?.token);
+      dispatch(getCurrentUser());
       setLoading(false);
       router.push("/");
     } catch (error) {
@@ -87,5 +90,24 @@ export const uploadFile = (file, setLoading) => async (dispatch) => {
       );
     }
     console.log(error);
+  }
+};
+
+export const getCurrentUser = () => async (dispatch) => {
+  try {
+    let response = await axios.get(`${BASE_URL}/api/auth/current-user`);
+    dispatch({ type: Types.GET_CURRENT_USER, payload: response?.data });
+  } catch (error) {
+    if (error?.response?.data) {
+      dispatch({
+        type: Types.GET_CURRENT_USER_FAILED,
+        payload: error?.response?.data?.status,
+      });
+    } else {
+      dispatch({
+        type: Types.GET_CURRENT_USER_FAILED,
+        payload: error?.message,
+      });
+    }
   }
 };

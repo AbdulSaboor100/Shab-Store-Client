@@ -12,6 +12,7 @@ export default function (store = initialStore, action) {
   let { type, payload } = action;
   switch (type) {
     case Types.AUTH_REGISTER:
+    case Types.GET_CURRENT_USER:
       return {
         ...store,
         success: payload.success,
@@ -20,6 +21,7 @@ export default function (store = initialStore, action) {
         token: payload.token,
       };
     case Types.AUTH_REGISTER_FAILED:
+    case Types.GET_CURRENT_USER_FAILED:
       return {
         ...store,
         success: false,
