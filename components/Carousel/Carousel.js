@@ -6,8 +6,8 @@ import Image from "next/image";
 const Carousel = () => {
   return (
     <div className={styles.carousel_container}>
-      <CarouselLib>
-        <div className={`${styles.merch_imgs} secondaryColor`}>
+      <CarouselLib pagination={false}>
+        <div className={`${styles.merch_imgs} darkBlueColor`}>
           <Image
             src="/images/merch_shirt.jpg"
             width={500}
@@ -16,7 +16,7 @@ const Carousel = () => {
             alt="merch shirt image"
           />
         </div>
-        <div className={`${styles.merch_imgs} secondaryColor`}>
+        <div className={`${styles.merch_imgs} darkBlueColor`}>
           <Image
             src="/images/merch_shirt.jpg"
             width={500}
@@ -25,7 +25,7 @@ const Carousel = () => {
             alt="merch shirt image"
           />
         </div>
-        <div className={`${styles.merch_imgs} secondaryColor`}>
+        <div className={`${styles.merch_imgs} darkBlueColor`}>
           <Image
             src="/images/merch_shirt.jpg"
             width={500}

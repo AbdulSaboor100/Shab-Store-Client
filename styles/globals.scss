@@ -104,7 +104,7 @@ a {
   font-family: "Inter" !important;
 }
 
-li{
+li {
   font-family: "Inter" !important;
 }
 
@@ -167,16 +167,26 @@ li{
   }
   .MuiFilledInput-root {
     &::after {
-      border:none !important;
+      border: none !important;
     }
   }
-  .BaseBadge-badge{
+  .BaseBadge-badge {
     background: #832bc1 !important;
   }
 }
 
-.menu_container{
-  .MuiPaper-root{
+.menu_container {
+  .MuiPaper-root {
     background: #f4f2ff !important;
   }
+}
+
+.rec-arrow {
+  height: 30px !important;
+  width: 30px !important;
+  min-width: 30px !important;
+  line-height: 30px !important;
+  font-size: 10px !important;
+  background: #14142b !important;
+  color: white !important;
 }
